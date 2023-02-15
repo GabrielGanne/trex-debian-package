@@ -1,0 +1,16 @@
+Source: trex
+Section: utils
+Priority: optional
+Maintainer: Gabriel Ganne <gabriel.ganne@gmail.com>
+Build-Depends: debhelper-compat (= 12)
+Standards-Version: 4.5.0
+Homepage: https://trex-tgn.cisco.com/
+
+Package: trex
+Architecture: any
+Multi-Arch: foreign
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Realistic Traffic Generator
+ TRex is an open source, low cost, stateful and stateless traffic generator
+ fuelled by DPDK. It generates L3-7 traffic and provides in one tool
+ capabilities provided by commercial tools.

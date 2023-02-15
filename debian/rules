@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+# You must remove unused comment lines for the released package.
+#export DH_VERBOSE = 1
+#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+%:
+	dh $@
+
+override_dh_auto_install:
+	dh_auto_install -- prefix=/opt
+
+# do not run some steps changing binaries
+override_dh_dwz:
+override_dh_strip:
+
+# tell debian to look in local trex library folder
+override_dh_shlibdeps:
+	dh_shlibdeps -lopt/trex-v2.99/so/x86_64/
