@@ -1,4 +1,4 @@
-Source: trex
+Source: trex-perf-test
 Section: utils
 Priority: optional
 Maintainer: Gabriel Ganne <gabriel.ganne@gmail.com>
@@ -6,7 +6,7 @@ Build-Depends: debhelper-compat (= 12)
 Standards-Version: 4.5.0
 Homepage: https://trex-tgn.cisco.com/
 
-Package: trex
+Package: trex-perf-test
 Architecture: any
 Multi-Arch: foreign
 Depends: ${misc:Depends}, ${shlibs:Depends}

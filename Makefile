@@ -26,21 +26,21 @@ clean:
 	@rm -vf trex-stamp
 	@rm -rvf $(TREX_SETUP_DONE)
 
-$(DESTDIR)/$(PREFIX)/trex: $(TREX_SETUP_DONE)
+$(DESTDIR)/$(PREFIX)/trex-perf-test: $(TREX_SETUP_DONE)
 	@mkdir -p $(DESTDIR)/$(PREFIX)
 	@cp -rvu $(TREX_PATH)/$(TREX_RELEASE) $(DESTDIR)/$(PREFIX)/trex-$(TREX_RELEASE)
-	@ln -v -s $(DESTDIR)/$(PREFIX)/trex-$(TREX_RELEASE) $(DESTDIR)/$(PREFIX)/trex
+	@ln -v -s $(DESTDIR)/$(PREFIX)/trex--perf-test$(TREX_RELEASE) $(DESTDIR)/$(PREFIX)/trex-perf-test
 
 .PHONY: install
-install: $(DESTDIR)/$(PREFIX)/trex
+install: $(DESTDIR)/$(PREFIX)/trex-perf-test
 
 .PHONY: uninstall
 uninstall:
-	unlink $(DESTDIR)/$(PREFIX)/trex
-	@rm -rvf $(DESTDIR)/$(PREFIX)/trex-$(TREX_RELEASE)
+	unlink $(DESTDIR)/$(PREFIX)/trex-perf-test
+	@rm -rvf $(DESTDIR)/$(PREFIX)/trex-perf-test-$(TREX_RELEASE)
 
-trex-$(TREX_RELEASE).tar.xz:
+trex-perf-test-$(TREX_RELEASE).tar.xz:
 	git archive HEAD --output $@
 
 .PHONY: dist
-dist: trex-$(TREX_RELEASE).tar.xz
+dist: trex-perf-test-$(TREX_RELEASE).tar.xz
