@@ -1,3 +1,9 @@
+trex-perf-test (2.99-1) unstable; urgency=low
+
+  * fix symlink issue
+
+ -- Gabriel Ganne <gabriel.ganne@gmail.com>  Mon, 27 Feb 2023 09:13:07 +0100
+
 trex-perf-test (2.99) UNRELEASED; urgency=low
 
   * Initial release.
