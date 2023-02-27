@@ -26,17 +26,15 @@ clean:
 	@rm -vf trex-stamp
 	@rm -rvf $(TREX_SETUP_DONE)
 
-$(DESTDIR)/$(PREFIX)/trex-perf-test: $(TREX_SETUP_DONE)
+$(DESTDIR)/$(PREFIX)/trex-$(TREX_RELEASE): $(TREX_SETUP_DONE)
 	@mkdir -p $(DESTDIR)/$(PREFIX)
 	@cp -rvu $(TREX_PATH)/$(TREX_RELEASE) $(DESTDIR)/$(PREFIX)/trex-$(TREX_RELEASE)
-	@ln -v -s $(DESTDIR)/$(PREFIX)/trex--perf-test$(TREX_RELEASE) $(DESTDIR)/$(PREFIX)/trex-perf-test
 
 .PHONY: install
-install: $(DESTDIR)/$(PREFIX)/trex-perf-test
+install: $(DESTDIR)/$(PREFIX)/trex-$(TREX_RELEASE)
 
 .PHONY: uninstall
 uninstall:
-	unlink $(DESTDIR)/$(PREFIX)/trex-perf-test
 	@rm -rvf $(DESTDIR)/$(PREFIX)/trex-perf-test-$(TREX_RELEASE)
 
 trex-perf-test-$(TREX_RELEASE).tar.xz:
